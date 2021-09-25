@@ -1,6 +1,5 @@
 # 4mu_acc_eff
 
-
 cmsrel CMSSW_10_2_5
 cd CMSSW_10_2_5/src
 cmsenv
@@ -29,3 +28,21 @@ acc2d_a_eta_SPS:  means acceptance due First Jpsi due to eta cut on its daugter 
 dacc2d_a_eta_SPS: means erros on acceptance due First Jpsi due to eta cut on its daugter muons using SPS sample. you would have similar plot for each model (i.e DPS, JHU,Mix)
 acc2d_a_etapt_SPS: means acceptance due First Jpsi due to eta and pT cuts on its daugter muons using SPS sample. you would have similar plot for each model (i.e DPS, JHU,Mix)
 dacc2d_a_etapt_SPS: means erros on acceptance due First Jpsi due to eta and pT cuts on its daugter muons using SPS sample. you would have similar plot for each model (i.e DPS, JHU,Mix)
+
+Similary For effiency calucaltions
+nohup python -u efficiencyFactors_JJ_eff.py -l -q -b --dir="/uscms/home/muahmad/nobackup/Four_Mu_analysis/DoubleUpsilon/CMSSW_9_4_14_patch1/src/FourMuonAna/Onia/test/" --obsName="pT2mu_rapidity2mu" --obsBins="|0|1|2|3.5|5|6|7|8|9|10|12|15|20|30|40|10000|_|-2.0|-1.75|-1.5|-1.0|-0.5|0.5|1.0|1.5|1.75|2.0|" >& effs_pT2mu_rapidity2mu_JJ_4mu_eff.log &
+This is like acceptance, one factor per Jpsi
+nohup python -u efficiencyFactors_JJ_evteff.py -l -q -b --dir="/uscms/home/muahmad/nobackup/Four_Mu_analysis/DoubleUpsilon/CMSSW_9_4_14_patch1/src/FourMuonAna/Onia/test/" --obsName="pT2mu_pT2mu" --obsBins="|0|2.5|5.0|7.5|10.0|20.0|40.0|_|0|2.5|5.0|7.5|10.0|20.0|40.0|" >& effs_pT2mu_pT2mu_JJ_4mu_evteff.log &
+This is one factor per event (each event has two Jpsi)
+Plotting effciencies 
+python -u plot2dsigeffs_JJ_eff.py -l -q -b --obsName="pT2mu_rapidity2mu" --obsBins="|0|1|2|3.5|5|6|7|8|9|10|12|15|20|30|40|_|-2.0|-1.75|-1.5|-1.0|-0.5|0.5|1.0|1.5|1.75|2.0|" --Mix >& sigeffs_pT2mu_rapidity2mu_JJ_4mu_eff.log &
+python -u plot2dsigeffs_JJ_evteff.py -l -q -b --obsName="pT2mu_pT2mu" --obsBins="|0|2.5|5.0|7.5|10.0|20.0|40.0|_|0|2.5|5.0|7.5|10.0|20.0|40.0|" --symmetrize --Mix >& sigeffs_pT2mu_pT2mu_JJ_4mu_eff.log &
+
+
+Running Closure test: 
+python closure.py
+This read all acceptance and efficiency factors histrograms in root file and perfrom the closure test 
+
+closure test resutls will be saved in "closure_test_results.py" after running, which is again python dictionary hard to read by eye. But you can run following script to make latex table code 
+python makeTable.py 
+This will print out the latex code to make the table, just copy paste this code on latex and you will get a beautiful table 
