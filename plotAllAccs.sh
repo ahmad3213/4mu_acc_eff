@@ -1,0 +1,2 @@
+#python -u plot2dsigeffs_YY.py -l -q -b --obsName="pT2mu_rapidity2mu" --obsBins="|0|1|2|3|4|5|6|7|8|9|10|12|15|20|30|40|_|-2.0|-1.75|-1.5|-1.0|-0.5|0.5|1.0|1.5|1.75|2.0|" >& sigeffs_pT2mu_rapidity2mu_YY_4mu.log &
+python -u plot2dsigeffs_JJ.py -l -q -b --obsName="pT2mu_rapidity2mu" --obsBins="|0|1|2|3.5|5|6|7|8|9|10|12|15|20|30|40|_|-2.0|-1.75|-1.5|-1.0|-0.5|0.5|1.0|1.5|1.75|2.0|" --Mix >& sigeffs_pT2mu_rapidity2mu_JJ_4mu.log &
