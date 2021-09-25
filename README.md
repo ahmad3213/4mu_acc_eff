@@ -56,12 +56,12 @@ You can keep ``--Mix`` option or remove it. What it does: it takes SPS and DPS a
 
 ``
 nohup python -u efficiencyFactors_JJ_eff.py -l -q -b --dir="/uscms/home/muahmad/nobackup/Four_Mu_analysis/DoubleUpsilon/CMSSW_9_4_14_patch1/src/FourMuonAna/Onia/test/" --obsName="pT2mu_rapidity2mu" --obsBins="|0|1|2|3.5|5|6|7|8|9|10|12|15|20|30|40|10000|_|-2.0|-1.75|-1.5|-1.0|-0.5|0.5|1.0|1.5|1.75|2.0|" >& effs_pT2mu_rapidity2mu_JJ_4mu_eff.log &
-```
+``
 This is similar like acceptance, one factor per Jpsi.
 
-```
+``
 nohup python -u efficiencyFactors_JJ_evteff.py -l -q -b --dir="/uscms/home/muahmad/nobackup/Four_Mu_analysis/DoubleUpsilon/CMSSW_9_4_14_patch1/src/FourMuonAna/Onia/test/" --obsName="pT2mu_pT2mu" --obsBins="|0|2.5|5.0|7.5|10.0|20.0|40.0|_|0|2.5|5.0|7.5|10.0|20.0|40.0|" >& effs_pT2mu_pT2mu_JJ_4mu_evteff.log &
-```
+``
 
 This is one factor per event (each event has two Jpsi mesons)
 
