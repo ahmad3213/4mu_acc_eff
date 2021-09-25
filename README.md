@@ -80,4 +80,12 @@ This read all acceptance and efficiency factors histrograms in root file and per
 
 closure test resutls will be saved in ``closure_test_results.py`` after running, which is again python dictionary hard to read by eye. But you can run following script to make latex table code 
 ``python makeTable.py`` 
-This will print out the latex code to make the table, just copy paste this code on latex and you will get a beautiful table 
+This will print out the latex code to make the table, just copy paste this code on latex and you will get a beautiful table
+
+### NTuples production: 
+All NTuples needed as input exist on cmslpc machine. If needs to reporduce for some reason, please follow instructions here 
+code is here. git branch ``test_only``
+``
+https://github.com/ahmad3213/FourMuonAna
+``
+
