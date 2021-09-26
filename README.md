@@ -109,15 +109,21 @@ https://github.com/ahmad3213/FourMuonAna
 
 ### Important Note: 
 The input NTuple exist on cmslpc machine, if you do not have account on this machine. You can try to follow receipe at lxplus but few following changes would be required to read input files from cmslpc machine. 
+
 e.g. 
+
 local file at cmslpc: /eos/uscms/store/user/muahmad/FourMuon_Analysis/NTuples/NTuples_JJ/Background_MC/SPS_match/SPSToJJ_13TeV_pythia8.root
 can be read from lxplus like following 
 
 root://cmsxrootd.fnal.gov//store/user/muahmad/FourMuon_Analysis/NTuples/NTuples_JJ/Background_MC/SPS_match/SPSToJJ_13TeV_pythia8.root
 
 So you would need change script following lines in script ``LoadData_JJ_eff.py``
+
 dirMC_102 = '/eos/uscms/store/user/muahmad/FourMuon_Analysis/NTuples/NTuples_JJ/Background_MC/SPS_match'
+
 gen_dirMC_102 = '/eos/uscms/store/user/muahmad/FourMuon_Analysis/NTuples/NTuples_JJ/GENonly_MC'
+
 to 
+
 dirMC_102 = 'root://cmsxrootd.fnal.gov//store/user/muahmad/FourMuon_Analysis/NTuples/NTuples_JJ/Background_MC/SPS_match'
 gen_dirMC_102 = 'root://cmsxrootd.fnal.gov///uscms/store/user/muahmad/FourMuon_Analysis/NTuples/NTuples_JJ/GENonly_MC'
