@@ -10,6 +10,8 @@ cmsenv
 
 git clone https://github.com/ahmad3213/4mu_acc_eff
 
+cd 4mu_acc_eff
+
 ## Scripts to Caluclate Acceptances:
 To calcualte acceptance maps for Jpsi, please run following command
 
@@ -36,7 +38,7 @@ Inside ``efficiencyFactors_JJ.py`` script: we are importing ``sample_shortnames_
 Once acceptance are calucalted the results would be stored in ``inputs_sig_JJpT2mu_rapidity2mu.py`` in the form of a python dictonary. which is not easy read by eye. You can use following command to make plot(s) which will read numbers from this python dictionary and plot acceptance maps
 
 ``
-python -u plot2dsigeffs_JJ.py -l -q -b --obsName="pT2mu_rapidity2mu" --obsBins="|0|1|2|3.5|5|6|7|8|9|10|12|15|20|30|40|_|-2.0|-1.75|-1.5|-1.0|-0.5|0.5|1.0|1.5|1.75|2.0|" --Mix >& sigeffs_pT2mu_rapidity2mu_JJ_4mu.log & 
+python -u plot2dsigeffs_JJ.py -l -q -b --obsName="pT2mu_rapidity2mu" --obsBins="|0|1|2|3.5|5|6|7|8|9|10|12|15|20|30|40|10000|_|-2.0|-1.75|-1.5|-1.0|-0.5|0.5|1.0|1.5|1.75|2.0|" --Mix >& sigeffs_pT2mu_rapidity2mu_JJ_4mu.log & 
 ``
 
 Similary progress can be monitored by 
@@ -63,6 +65,7 @@ You can keep ``--Mix`` option or remove it. What it does: it takes SPS and DPS a
 ``
 nohup python -u efficiencyFactors_JJ_eff.py -l -q -b --dir="/uscms/home/muahmad/nobackup/Four_Mu_analysis/DoubleUpsilon/CMSSW_9_4_14_patch1/src/FourMuonAna/Onia/test/" --obsName="pT2mu_rapidity2mu" --obsBins="|0|1|2|3.5|5|6|7|8|9|10|12|15|20|30|40|10000|_|-2.0|-1.75|-1.5|-1.0|-0.5|0.5|1.0|1.5|1.75|2.0|" >& effs_pT2mu_rapidity2mu_JJ_4mu_eff.log &
 ``
+
 This is similar like acceptance, one factor per Jpsi.
 
 ``
@@ -75,8 +78,15 @@ Plotting effciencies:
 
 ``
 python -u plot2dsigeffs_JJ_eff.py -l -q -b --obsName="pT2mu_rapidity2mu" --obsBins="|0|1|2|3.5|5|6|7|8|9|10|12|15|20|30|40|_|-2.0|-1.75|-1.5|-1.0|-0.5|0.5|1.0|1.5|1.75|2.0|" --Mix >& sigeffs_pT2mu_rapidity2mu_JJ_4mu_eff.log &
+``
+
+--Mix: This options is same and does mixing of SPS and DPS sample with the ratio of 80 and 20 respectively.
+
+``
 python -u plot2dsigeffs_JJ_evteff.py -l -q -b --obsName="pT2mu_pT2mu" --obsBins="|0|2.5|5.0|7.5|10.0|20.0|40.0|_|0|2.5|5.0|7.5|10.0|20.0|40.0|" --symmetrize --Mix >& sigeffs_pT2mu_pT2mu_JJ_4mu_eff.log &
 ``
+
+--symmetrize: This option only appear here first time. These above last factors are caluclatued per event as function of pT of Jpsi and each event have two Jpsi mesons. Since the choice of Jpsi_1 and Jpsi_2 are random, so that why we should average non-dignal of matrix (i.e. after --symmetrize option there would an additional plot produced where element of matrix a13 = a31)
 
 Running Closure test: 
 
