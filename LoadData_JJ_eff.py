@@ -1,27 +1,27 @@
 from ROOT import *
 from array import array
 import os
-dirMC_102 = '/eos/uscms/store/user/muahmad/FourMuon_Analysis/NTuples/NTuples_JJ/Background_MC/SPS_match'
-gen_dirMC_102 = '/eos/uscms/store/user/muahmad/FourMuon_Analysis/NTuples/NTuples_JJ/GENonly_MC'
+#dirMC_102 = '/eos/uscms/store/user/muahmad/FourMuon_Analysis/NTuples/NTuples_JJ/Background_MC/SPS_match'
+dirMC_102 = '/eos/user/m/muahmad/TnP_ntuples/NTuples_JJ/SPS_match/Background_MC'
 SamplesMC_102 = [
 'SPSToJJ_13TeV_pythia8.root',
-'DPSToJJ_13TeV_pythia8.root',
-'HToJJ_m6200_13TeV_JHUpythia8.root',
-'HToJJ_m6300_13TeV_JHUpythia8.root',
-'HToJJ_m6400_13TeV_JHUpythia8.root',
-'HToJJ_m6500_13TeV_JHUpythia8.root',
-'HToJJ_m6900_13TeV_JHUpythia8.root',
-'HToJJ_13TeV_JHUpythia8.root', # All above added together to gain statistics
-'Chib0_6300_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
-'Chib0_6500_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
-'Chib0_6700_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
-'Chib0_6900_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
-'Chib0_6X00_ToJpsiJpsi_TuneCP5_13TeV-pythia.root', 
-'Chib0_7100_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
-'Chib0_7300_ToJpsiJpsi_TuneCP5_13TeV-pythia.root', 
-'Chib0_7500_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
-'Chib0_7700_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
-'Chib0_7X00_ToJpsiJpsi_TuneCP5_13TeV-pythia.root' 
+#'DPSToJJ_13TeV_pythia8.root',
+#'HToJJ_m6200_13TeV_JHUpythia8.root',
+#'HToJJ_m6300_13TeV_JHUpythia8.root',
+#'HToJJ_m6400_13TeV_JHUpythia8.root',
+#'HToJJ_m6500_13TeV_JHUpythia8.root',
+#'HToJJ_m6900_13TeV_JHUpythia8.root',
+#'HToJJ_13TeV_JHUpythia8.root', # All above added together to gain statistics
+#'Chib0_6300_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
+#'Chib0_6500_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
+#'Chib0_6700_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
+#'Chib0_6900_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
+#'Chib0_6X00_ToJpsiJpsi_TuneCP5_13TeV-pythia.root', 
+#'Chib0_7100_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
+#'Chib0_7300_ToJpsiJpsi_TuneCP5_13TeV-pythia.root', 
+#'Chib0_7500_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
+#'Chib0_7700_ToJpsiJpsi_TuneCP5_13TeV-pythia.root',
+#'Chib0_7X00_ToJpsiJpsi_TuneCP5_13TeV-pythia.root' 
 ]
 gen_SamplesMC_102 = [
 'SPSToJJ_13TeV_pythia8.root',
