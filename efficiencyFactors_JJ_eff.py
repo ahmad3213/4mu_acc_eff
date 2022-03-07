@@ -286,7 +286,7 @@ obs_bins_y.pop(0)
 List = []
 chans = ['4mu']
 gen_mu_eta_cut = 2.4
-gen_mu_pt_cut = 3.0
+gen_mu_pt_cut = 2.0
 integral_Fid_a = 0
 integral_Fid_b = 0
 integral_reco_a = 0
