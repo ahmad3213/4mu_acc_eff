@@ -1,8 +1,8 @@
 from ROOT import *
 from array import array
 import os
-dirMC_102 = '/eos/uscms/store/user/muahmad/FourMuon_Analysis/NTuples/NTuples_JJ/Background_MC/SPS_match'
-gen_dirMC_102 = '/eos/uscms/store/user/muahmad/FourMuon_Analysis/NTuples/NTuples_JJ/GENonly_MC'
+#dirMC_102 = '/eos/uscms/store/user/muahmad/FourMuon_Analysis/NTuples/NTuples_JJ/Background_MC/SPS_match'
+dirMC_102 = '/eos/user/m/muahmad/TnP_ntuples/NTuples_JJ/SPS_match/Background_MC'
 SamplesMC_102 = [
 'SPSToJJ_13TeV_pythia8.root',
 #'DPSToJJ_13TeV_pythia8.root',
