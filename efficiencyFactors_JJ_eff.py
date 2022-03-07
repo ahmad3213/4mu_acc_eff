@@ -195,11 +195,9 @@ def geteffs(channel, List, obs_bins_pt, obs_bins_y, obs_gen_pT, obs_gen_y, genbi
 
     	# GEN level 
     	Tree[Sample].Draw("GENups_mass[0] >> "+processBin+"fid_a_etapt","("+genweight+")*("+cut_ups_gen_ya+" && "+cut_ups_gen_pta+" && "+cut_mu_gen_eta_a+" && "+ cut_mu_gen_pt_a+")","goff")
-
     	Tree[Sample].Draw("GENups_mass[1] >> "+processBin+"fid_b_etapt","("+genweight+")*("+cut_ups_gen_yb+" && "+cut_ups_gen_ptb+" && "+cut_mu_gen_eta_b+" && "+ cut_mu_gen_pt_b+")","goff")
 
         # RECO level
-
         '''
         Tree[Sample].Draw("ups1_mass_GenMatched >> "+processBin+"reco_eff_a","("+recoweight+")*("+cut_reco_ups_a+" && " +cut_ups_reco_ya+" && "+cut_ups_reco_pta+" && "+cut_mu_gen_eta_a+" && "+ cut_mu_gen_pt_a+" && "+cut_mu_gen_Momid_a+")","goff")
         Tree[Sample].Draw("ups2_mass_GenMatched >> "+processBin+"reco_eff_b","("+recoweight+")*("+cut_reco_ups_b+ " && " +cut_ups_reco_yb+" && "+cut_ups_reco_ptb+")","goff")
@@ -208,17 +206,18 @@ def geteffs(channel, List, obs_bins_pt, obs_bins_y, obs_gen_pT, obs_gen_y, genbi
 
         Tree[Sample].Draw("ups1_mass_GenMatched_ID_OS_VTX >> "+processBin+"reco_eff_id_vtx_a","("+recoweight+")*("+cut_reco_id_vtx_ups_a+" && "+cut_ups_reco_ya+" && "+cut_ups_reco_pta+" && "+cut_mu_gen_eta_a+" && "+ cut_mu_gen_pt_a+" && "+cut_mu_gen_Momid_a+")","goff")
         Tree[Sample].Draw("ups2_mass_GenMatched_ID_OS_VTX >> "+processBin+"reco_eff_id_vtx_b","("+recoweight+")*("+cut_reco_id_vtx_ups_b+" && "+cut_ups_reco_yb+" && "+cut_ups_reco_ptb+" && "+cut_mu_gen_eta_b+" && "+ cut_mu_gen_pt_b+" && "+cut_mu_gen_Momid_b+")","goff")
-        '''
+        ''' 
 #        Tree[Sample].Draw("ups1_mass_GenMatched >> "+processBin+"reco_eff_a","("+recoweight+")*("+cut_reco_ups_a+" && " +cut_ups_reco_ya+" && "+cut_ups_reco_pta+")","goff")
 #        Tree[Sample].Draw("ups2_mass_GenMatched >> "+processBin+"reco_eff_b","("+recoweight+")*("+cut_reco_ups_b+ " && " +cut_ups_reco_yb+" && "+cut_ups_reco_ptb+")","goff")
         Tree[Sample].Draw("ups1_mass_GenMatched >> "+processBin+"reco_eff_a","("+recoweight+")*("+cut_reco_ups_a+" && " +cut_ups_gen_ya+" && "+cut_ups_gen_pta+" && "+cut_mu_gen_eta_a+" && "+ cut_mu_gen_pt_a+")","goff")
         Tree[Sample].Draw("ups2_mass_GenMatched >> "+processBin+"reco_eff_b","("+recoweight+")*("+cut_reco_ups_b+ " && " +cut_ups_gen_yb+" && "+cut_ups_gen_ptb+" && "+cut_mu_gen_eta_b+" && "+ cut_mu_gen_pt_b+")","goff")
         Tree[Sample].Draw("ups1_mass_GenMatched >> "+processBin+"reco_eff_a_temp","("+recoweight+")*("+cut_reco_ups_a+" && " +cut_ups_reco_ya+" && "+cut_ups_reco_pta+" && "+cut_mu_reco_eta_a+" && "+cut_mu_reco_pta_a+")","goff")
         Tree[Sample].Draw("ups2_mass_GenMatched >> "+processBin+"reco_eff_b_temp","("+recoweight+")*("+cut_reco_ups_b+ " && " +cut_ups_reco_yb+" && "+cut_ups_reco_ptb+" && "+cut_mu_reco_eta_b+" && "+cut_mu_reco_pta_b+")","goff")
-        Tree[Sample].Draw("ups1_mass_GenMatched_ID >> "+processBin+"reco_eff_id_a","("+recoweight+")*("+cut_reco_id_ups_a+" && "+cut_ups_reco_ID_ya+" && "+cut_ups_reco_ID_pta+")","goff")
-        Tree[Sample].Draw("ups2_mass_GenMatched_ID >> "+processBin+"reco_eff_id_b","("+recoweight+")*("+cut_reco_id_ups_b+" && "+cut_ups_reco_ID_yb+" && "+cut_ups_reco_ID_ptb+")","goff")
-        Tree[Sample].Draw("ups1_mass_GenMatched_ID_OS_VTX >> "+processBin+"reco_eff_id_vtx_a","("+recoweight+")*("+cut_reco_id_vtx_ups_a+" && "+cut_ups_reco_ID_OS_VTX_ya+" && "+cut_ups_reco_ID_OS_VTX_pta+")","goff")
-        Tree[Sample].Draw("ups2_mass_GenMatched_ID_OS_VTX >> "+processBin+"reco_eff_id_vtx_b","("+recoweight+")*("+cut_reco_id_vtx_ups_b+" && "+cut_ups_reco_ID_OS_VTX_yb+" && "+cut_ups_reco_ID_OS_VTX_ptb+")","goff")      
+        Tree[Sample].Draw("ups1_mass_GenMatched_ID >> "+processBin+"reco_eff_id_a","("+recoweight+")*("+cut_reco_id_ups_a+" && "+cut_ups_reco_ID_ya+" && "+cut_ups_reco_ID_pta+" && "+cut_mu_reco_eta_a+" && "+cut_mu_reco_pta_a+")","goff")
+        Tree[Sample].Draw("ups2_mass_GenMatched_ID >> "+processBin+"reco_eff_id_b","("+recoweight+")*("+cut_reco_id_ups_b+" && "+cut_ups_reco_ID_yb+" && "+cut_ups_reco_ID_ptb+" && "+cut_mu_reco_eta_b+" && "+cut_mu_reco_pta_b+")","goff")
+        Tree[Sample].Draw("ups1_mass_GenMatched_ID_OS_VTX >> "+processBin+"reco_eff_id_vtx_a","("+recoweight+")*("+cut_reco_id_vtx_ups_a+" && "+cut_ups_reco_ID_OS_VTX_ya+" && "+cut_ups_reco_ID_OS_VTX_pta+" && "+cut_mu_reco_eta_a+" && "+cut_mu_reco_pta_a+")","goff")
+        Tree[Sample].Draw("ups2_mass_GenMatched_ID_OS_VTX >> "+processBin+"reco_eff_id_vtx_b","("+recoweight+")*("+cut_reco_id_vtx_ups_b+" && "+cut_ups_reco_ID_OS_VTX_yb+" && "+cut_ups_reco_ID_OS_VTX_ptb+" && "+cut_mu_reco_eta_b+" && "+cut_mu_reco_pta_b+")","goff")      
+
         if (Histos[processBin+"fid_a_etapt"].Integral()>0):
                 recoeff_a[processBin]  =  Histos[processBin+"reco_eff_a"].Integral()/Histos[processBin+"fid_a_etapt"].Integral()
                 drecoeff_a[processBin] = sqrt(recoeff_a[processBin]*(1.0-recoeff_a[processBin])/Histos[processBin+"fid_a_etapt"].Integral())
@@ -287,7 +286,7 @@ obs_bins_y.pop(0)
 List = []
 chans = ['4mu']
 gen_mu_eta_cut = 2.4
-gen_mu_pt_cut = 2.0
+gen_mu_pt_cut = 3.0
 integral_Fid_a = 0
 integral_Fid_b = 0
 integral_reco_a = 0
